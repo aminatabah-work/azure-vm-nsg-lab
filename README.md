@@ -28,10 +28,18 @@ This project demonstrates how NSG rules can be used to control inbound and outbo
 
 ## Why I Built This
 
-I created this project to strengthen my Azure cloud engineering skills and demonstrate hands-on experience with Azure compute, networking, and basic cloud security controls.
+I created this project to strengthen my Azure cloud engineering skills and demonstrate hands-on experience with Azure compute, networking, and basic cloud security controls. This project demonstrates hands-on experience designing secure Azure infrastructure, including compute, networking, and access control using Terraform.
 
 ## Status
 
 Initial implementation complete.
+
+## Architecture
+
+This project provisions a secure Azure environment with the following flow:
+
+Internet → NSG (SSH allowed) → Subnet → Network Interface → Virtual Machine
+
+The Network Security Group restricts access to only SSH traffic, ensuring controlled and minimal exposure.
 
 Note: This project uses a placeholder SSH public key for demonstration purposes.
