@@ -46,3 +46,4 @@ The Network Security Group restricts access to only SSH traffic, ensuring contro
 See detailed architecture: [ARCHITECTURE.md](./ARCHITECTURE.md)
 
 Note: This project uses a placeholder SSH public key for demonstration purposes.
+For simplicity, this lab allows SSH from any source. In production, access should be restricted to trusted IP ranges.
