@@ -14,10 +14,11 @@ The goal of this project is to show how Azure compute and networking resources c
 - Azure Network Security Group (NSG)
 - Azure Network Interface
 - Azure Linux Virtual Machine
+- Azure Public IP
 
 ## Security Focus
 
-This project demonstrates how NSG rules can be used to control inbound and outbound network traffic to a virtual machine. The goal is to show secure-by-default cloud networking and least-exposure design. This project demonstrates controlled access by allowing only SSH (port 22) traffic to the virtual machine using NSG rules.
+This project demonstrates how NSG rules can be used to control inbound and outbound network traffic to a virtual machine. The goal is to show secure-by-default cloud networking and least-exposure design. This project demonstrates controlled inbound access by allowing SSH (port 22) traffic through an NSG rule for administrative access to the virtual machine.
 
 ## Tools Used
 
@@ -38,7 +39,7 @@ Initial implementation complete.
 
 This project provisions a secure Azure environment with the following flow:
 
-Internet → NSG (SSH allowed) → Subnet → Network Interface → Virtual Machine
+Internet → Public IP → NSG (SSH allowed) → Subnet → Network Interface → Virtual Machine
 
 The Network Security Group restricts access to only SSH traffic, ensuring controlled and minimal exposure.
 
