@@ -1,6 +1,6 @@
 # Azure VM NSG Lab
 
-This project provisions a secure Azure virtual machine environment using Terraform, with a focus on cloud networking, controlled administrative access, infrastructure validation, and Azure security best practices.
+This project provisions a secure Azure virtual machine environment using Terraform, emphasizing cloud networking, controlled administrative access, infrastructure validation, and Azure security best practices.
 
 ## Overview
 
@@ -21,6 +21,8 @@ This lab demonstrates how to design and deploy Azure infrastructure using Infras
 This project uses an NSG rule to allow SSH (port 22) for administrative access to the virtual machine. The design demonstrates controlled inbound access, network segmentation through a subnet, and explicit attachment of a public IP to support remote connectivity.
 
 For simplicity, this lab allows SSH from any source. In a production environment, access should be restricted to trusted IP ranges and managed through tighter security controls.
+
+This design reflects a foundational cloud security approach, where access is explicitly defined, network boundaries are enforced, and infrastructure is provisioned in a repeatable and auditable way.
 
 Note: This project uses a placeholder SSH public key for demonstration purposes.
 
