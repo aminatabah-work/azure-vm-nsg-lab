@@ -34,7 +34,22 @@ This repository uses GitHub Actions to automatically run:
 - `terraform init`
 - `terraform validate`
 
-This helps ensure the Terraform code remains consistently formatted and valid as changes are made.
+This pipeline enforces infrastructure quality by automatically validating Terraform configurations before deployment. 
+
+It ensures:
+- Consistent formatting across the codebase
+- Early detection of configuration errors
+- Reliable, production-ready infrastructure definitions
+
+## Terraform Design
+
+This project follows a modular Terraform architecture:
+
+- Reusable modules for infrastructure components (e.g., Key Vault)
+- Centralized variable management for flexibility
+- Separation of concerns between networking, compute, and security
+
+This approach improves maintainability, scalability, and reusability of infrastructure code.
 
 ## Why I Built This
 
