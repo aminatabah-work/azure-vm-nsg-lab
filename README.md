@@ -43,4 +43,6 @@ Internet → Public IP → NSG (SSH allowed) → Subnet → Network Interface �
 
 The Network Security Group restricts access to only SSH traffic, ensuring controlled and minimal exposure.
 
+See detailed architecture: [ARCHITECTURE.md](./ARCHITECTURE.md)
+
 Note: This project uses a placeholder SSH public key for demonstration purposes.
