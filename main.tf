@@ -13,11 +13,18 @@ provider "azurerm" {
   features {}
 }
 
+# ---------------------------
+# Resource Group
+# ---------------------------
 resource "azurerm_resource_group" "rg" {
   name     = "rg-vm-nsg-lab"
   location = var.location
 }
 
+
+# ---------------------------
+# Virtual Network + Subnet
+# ---------------------------
 resource "azurerm_virtual_network" "vnet" {
   name                = "vnet-vm-nsg-lab"
   address_space       = ["10.0.0.0/16"]
@@ -32,6 +39,9 @@ resource "azurerm_subnet" "subnet" {
   address_prefixes     = ["10.0.1.0/24"]
 }
 
+# ---------------------------
+# Network Security Group + Rules
+# ---------------------------
 resource "azurerm_network_security_group" "nsg" {
   name                = "nsg-vm-lab"
   location            = azurerm_resource_group.rg.location
@@ -52,6 +62,9 @@ resource "azurerm_network_security_rule" "allow_ssh" {
   network_security_group_name = azurerm_network_security_group.nsg.name
 }
 
+# ---------------------------
+# Network Interface
+# ---------------------------
 resource "azurerm_network_interface" "nic" {
   name                = "nic-vm-lab"
   location            = azurerm_resource_group.rg.location
@@ -69,6 +82,9 @@ resource "azurerm_subnet_network_security_group_association" "nsg_assoc" {
   network_security_group_id = azurerm_network_security_group.nsg.id
 }
 
+# ---------------------------
+# Linux Virtual Machine
+# ---------------------------
 resource "azurerm_linux_virtual_machine" "vm" {
   name                = var.vm_name
   resource_group_name = azurerm_resource_group.rg.name
