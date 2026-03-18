@@ -13,6 +13,8 @@ provider "azurerm" {
   features {}
 }
 
+data "azurerm_client_config" "current" {}
+
 # ---------------------------
 # Resource Group
 # ---------------------------
@@ -124,4 +126,16 @@ resource "azurerm_linux_virtual_machine" "vm" {
     sku       = "22_04-lts"
     version   = "latest"
   }
+}
+
+# ---------------------------
+# Key Vault
+# ---------------------------
+module "key_vault" {
+  source              = "./modules/key_vault"
+  name                = "kv-vm-nsg-lab"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+  tenant_id           = data.azurerm_client_config.current.tenant_id
+  object_id           = data.azurerm_client_config.current.object_id
 }

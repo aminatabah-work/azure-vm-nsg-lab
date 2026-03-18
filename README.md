@@ -1,10 +1,10 @@
 # Azure VM NSG Lab
 
-This project demonstrates how to provision an Azure virtual machine and secure its network access using Terraform and Network Security Group (NSG) rules.
+This project provisions a secure Azure virtual machine environment using Terraform, emphasizing cloud networking, controlled administrative access, infrastructure validation, and Azure security best practices.
 
 ## Overview
 
-The goal of this project is to show how Azure compute and networking resources can be deployed using Infrastructure as Code (IaC). This lab includes a virtual machine, a virtual network, a subnet, and a Network Security Group to demonstrate secure access design.
+This lab demonstrates how to design and deploy Azure infrastructure using Infrastructure as Code (IaC). The environment includes a Linux virtual machine, virtual network, subnet, public IP, network interface, and Network Security Group (NSG) rules to support secure administrative access. The repository also includes GitHub Actions to automatically run Terraform formatting, initialization, and validation checks on every push.
 
 ## Azure Resources
 
@@ -12,28 +12,44 @@ The goal of this project is to show how Azure compute and networking resources c
 - Azure Virtual Network
 - Azure Subnet
 - Azure Network Security Group (NSG)
+- Azure Public IP
 - Azure Network Interface
 - Azure Linux Virtual Machine
-- Azure Public IP
 
-## Security Focus
+## Security Design
 
-This project demonstrates how NSG rules can be used to control inbound and outbound network traffic to a virtual machine. The goal is to show secure-by-default cloud networking and least-exposure design. This project demonstrates controlled inbound access by allowing SSH (port 22) traffic through an NSG rule for administrative access to the virtual machine.
+This project uses an NSG rule to allow SSH (port 22) for administrative access to the virtual machine. The design demonstrates controlled inbound access, network segmentation through a subnet, and explicit attachment of a public IP to support remote connectivity.
 
-## Tools Used
+For simplicity, this lab allows SSH from any source. In a production environment, access should be restricted to trusted IP ranges and managed through tighter security controls.
 
-- Terraform
-- Microsoft Azure
-- GitHub
-- Infrastructure as Code (IaC)
+This design reflects a foundational cloud security approach, where access is explicitly defined, network boundaries are enforced, and infrastructure is provisioned in a repeatable and auditable way.
+
+Note: This project uses a placeholder SSH public key for demonstration purposes.
+
+## CI/CD Validation
+
+This repository uses GitHub Actions to automatically run:
+
+- `terraform fmt -check -recursive`
+- `terraform init`
+- `terraform validate`
+
+This helps ensure the Terraform code remains consistently formatted and valid as changes are made.
 
 ## Why I Built This
 
-I created this project to strengthen my Azure cloud engineering skills and demonstrate hands-on experience with Azure compute, networking, and basic cloud security controls. This project demonstrates hands-on experience designing secure Azure infrastructure, including compute, networking, and access control using Terraform.
+I created this project to strengthen my Azure cloud engineering skills and demonstrate hands-on experience with infrastructure provisioning, networking, security controls, and CI/CD validation in a cloud environment.
 
-## Status
+## Skills Demonstrated
 
-Initial implementation complete.
+- Azure Infrastructure Provisioning
+- Terraform (Infrastructure as Code)
+- Azure Networking
+- Network Security Groups (NSGs)
+- Linux Virtual Machine Deployment
+- Public IP and Network Interface Configuration
+- GitHub Actions CI/CD
+- Terraform Validation and Workflow Automation
 
 ## Architecture
 
@@ -41,9 +57,8 @@ This project provisions a secure Azure environment with the following flow:
 
 Internet → Public IP → NSG (SSH allowed) → Subnet → Network Interface → Virtual Machine
 
-The Network Security Group restricts access to only SSH traffic, ensuring controlled and minimal exposure.
-
 See detailed architecture: [ARCHITECTURE.md](./ARCHITECTURE.md)
 
-Note: This project uses a placeholder SSH public key for demonstration purposes.
-For simplicity, this lab allows SSH from any source. In production, access should be restricted to trusted IP ranges.
+## Status
+
+Initial implementation complete.
