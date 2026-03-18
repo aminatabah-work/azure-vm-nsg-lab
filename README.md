@@ -32,6 +32,6 @@ I created this project to strengthen my Azure cloud engineering skills and demon
 
 ## Status
 
-In progress.
+Initial implementation complete.
 
 Note: This project uses a placeholder SSH public key for demonstration purposes.
