@@ -17,7 +17,7 @@ The goal of this project is to show how Azure compute and networking resources c
 
 ## Security Focus
 
-This project demonstrates how NSG rules can be used to control inbound and outbound network traffic to a virtual machine. The goal is to show secure-by-default cloud networking and least-exposure design.
+This project demonstrates how NSG rules can be used to control inbound and outbound network traffic to a virtual machine. The goal is to show secure-by-default cloud networking and least-exposure design. This project demonstrates controlled access by allowing only SSH (port 22) traffic to the virtual machine using NSG rules.
 
 ## Tools Used
 
@@ -33,3 +33,5 @@ I created this project to strengthen my Azure cloud engineering skills and demon
 ## Status
 
 In progress.
+
+Note: This project uses a placeholder SSH public key for demonstration purposes.
