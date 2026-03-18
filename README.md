@@ -6,7 +6,7 @@ This project demonstrates how to provision an Azure virtual machine and secure i
 
 The goal of this project is to show how Azure compute and networking resources can be deployed using Infrastructure as Code (IaC). This lab includes a virtual machine, a virtual network, a subnet, and a Network Security Group to demonstrate secure access design.
 
-## Planned Azure Resources
+## Azure Resources
 
 - Azure Resource Group
 - Azure Virtual Network
