@@ -74,6 +74,20 @@ Internet → Public IP → NSG (SSH allowed) → Subnet → Network Interface �
 
 See detailed architecture: [ARCHITECTURE.md](./ARCHITECTURE.md)
 
+
+## What This Project Demonstrates
+
+This project demonstrates the ability to design and deploy cloud infrastructure using Infrastructure as Code while following security and engineering best practices.
+
+Key capabilities shown:
+
+- Designing secure Azure networking with NSG-controlled access
+- Deploying and managing cloud resources using Terraform
+- Structuring infrastructure using reusable modules
+- Implementing CI/CD pipelines to validate infrastructure changes
+- Understanding Terraform workflows (init, plan, apply, destroy)
+- Writing clear documentation for real-world usability
+
 ## How to Run This Project
 
 1. Clone the repository:
