@@ -74,6 +74,10 @@ Internet → Public IP → NSG (SSH allowed) → Subnet → Network Interface �
 
 See detailed architecture: [ARCHITECTURE.md](./ARCHITECTURE.md)
 
-## Status
+## How to Run This Project
 
-Initial implementation complete.
+1. Clone the repository:
+
+```bash
+git clone https://github.com/aminatabah-work/azure-vm-nsg-lab.git
+cd azure-vm-nsg-lab
